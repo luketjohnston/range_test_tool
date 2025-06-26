@@ -15,7 +15,7 @@ steps to use
    but do all the others), then you can just go to the bottom of ranges.py and change 
    it to run "test(<path_to_directory>)"
 
-I've zipped up some example directories to reference.
+I've included up some example directories to reference.
 
 When testing, it will tell you the spot you're in and the hand you have, and let you 
 type something, but it doesn't do anything with the stuff you type. I like to type in

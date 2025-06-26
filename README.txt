@@ -12,8 +12,8 @@ steps to use
    select "copy" and then paste it into a text file in the directory
    with an identifying name (like "raise19" for example). 
 3. Once you have done this for all the actions you want to test (I usually skip "fold"
-   but do all the others), then you can just go to the bottom of this file and 
-   run "test(<path_to_directory>)"
+   but do all the others), then you can just go to the bottom of ranges.py and change 
+   it to run "test(<path_to_directory>)"
 
 I've zipped up some example directories to reference.
 

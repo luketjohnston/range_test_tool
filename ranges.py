@@ -95,6 +95,13 @@ def trim(range_dict):
       range_dict.pop(hand)
 
 
+def testhelper(i, total, spot, hand, hand_dict):
+    input(f"{spot} {i}/{total}: {hand}: ")
+    answer = "Correct answer is:" 
+    for a in hand_dict:
+      answer += f' {a} {100*hand_dict[a]:.0f}%'
+    print(answer)
+
 def test(directory):
   r = load_gto_range(directory)
   trim(r)
@@ -102,12 +109,23 @@ def test(directory):
 
   shuffled_hands = list(r.keys())
   random.shuffle(shuffled_hands)
-  for hand in shuffled_hands:
-    input(f"{spot}: {hand}: ")
-    answer = "Correct answer is:" 
-    for a in r[hand]:
-      answer += f' {a} {r[hand][a]}'
-    print(answer)
+  for i,hand in enumerate(shuffled_hands):
+    testhelper(i, len(shuffled_hands), spot, hand, r[hand])
+
+# TODO consolidate code with above
+def testall(directory):
+  all_hands = []
+  for d in glob.glob(f'{directory}/*'):
+    r = load_gto_range(d)
+    trim(r)
+    spot = f"{d.split('/')[-1]}"
+    all_hands += [(spot,hand,r[hand]) for hand in r]
+
+  random.shuffle(all_hands)
+  for i,(spot, hand, hand_dict) in enumerate(all_hands):
+    testhelper(i, len(all_hands), spot, hand, hand_dict)
+
+  
         
 
 
@@ -116,6 +134,18 @@ r1 = 'saved_ranges/bu_v_utg_6'
 r2 = 'saved_ranges/utg_v_btn_67p5'
 r3 = 'saved_ranges/sb_v_bb_24'
 r4 = 'saved_ranges/bb_v_button_6'
+r5 = 'saved_ranges/str_squeeze_bu_bb_6'
+r6 = 'saved_ranges/str_squeeze_utg_btn_6'
+r7 = 'saved_ranges/straddle_v_bb_8'
+r8 = 'saved_ranges/str_v_button_6'
+r9 = 'saved_ranges/str_vs_utg_6'
 
-test(r3)
+allr = [r1,r2,r3,r4,r5,r6,r7,r8,r9]
+allr = [r8]
+random.shuffle(allr)
+for x in allr:
+  test(x)
+
+#testall('saved_ranges')
+
 

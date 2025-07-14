@@ -1,3 +1,12 @@
+NOTE there is a small bug I just discovered - 
+if a range does not include all combos of a particular hand, for example say utg 
+opening 50% of the 45s, and then we are looking at the utg vs button 3b range, 
+if GTOwiz says that utg calls 100% of its 45s vs the button 3b, but we originally
+only opened 50% of the 45s, this program will say that we are only calling 50%.
+I think to fix this I need require copying the 'folding' ranges or maybe the 'all'
+ranges from GTOWiz into each directory but I haven't bothered to do that yet, it
+doesn't come up all that often.
+
 Hey Nimit! lmk if you have any questions, I wrote up how to use this below.
 I may make it more user friendly at some point and/or add features but right now
 it's really basic. 

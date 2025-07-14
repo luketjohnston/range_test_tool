@@ -139,13 +139,17 @@ r6 = 'saved_ranges/str_squeeze_utg_btn_6'
 r7 = 'saved_ranges/straddle_v_bb_8'
 r8 = 'saved_ranges/str_v_button_6'
 r9 = 'saved_ranges/str_vs_utg_6'
+r10 = 'saved_ranges/btn_v_sb_23p5'
+r11 = 'saved_ranges/btn_v_co_6'
+r12 = 'saved_ranges/co_v_btn_22p5'
 
-allr = [r1,r2,r3,r4,r5,r6,r7,r8,r9]
-allr = [r8]
-random.shuffle(allr)
-for x in allr:
-  test(x)
+allr = [r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11]
+allr = [r11]
 
-#testall('saved_ranges')
+#random.shuffle(allr)
+#for x in allr:
+#  test(x)
+
+testall('saved_ranges')
 
 
